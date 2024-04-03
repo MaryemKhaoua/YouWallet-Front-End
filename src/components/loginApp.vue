@@ -1,14 +1,5 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-
-</script>
-
 <template>
+
 <section class="">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
@@ -16,7 +7,7 @@ defineProps({
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              <h2 class="text-uppercase text-center mb-5">LogIn</h2>
 
               <form>
 
@@ -37,10 +28,10 @@ defineProps({
 
                 <div class="d-flex justify-content-center">
                   <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">logIn</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <router-link to="/login">Login</router-link>.</p>
+                <p class="text-center text-muted mt-5 mb-0">you don't have an account? <router-link to="/">Register here</router-link>.</p>
 
               </form>
 
@@ -52,28 +43,3 @@ defineProps({
   </div>
 </section>
 </template>
-
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
-</style>
