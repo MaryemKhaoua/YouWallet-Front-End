@@ -28,7 +28,7 @@
                     <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                   </div>
 
-                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <router-link to="/login">Login</router-link>.</p>
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <router-link to="/login">LogIn</router-link>.</p>
                 </form>
 
               </div>
