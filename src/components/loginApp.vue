@@ -13,18 +13,17 @@
 
 
                 <div class="form-outline mb-4">
-                  <input v-model="email" type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input v-model="data.email" type="email" id="form3Example3cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input v-model="password" type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input  v-model="data.password" type="password" id="form3Example4cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">logIn</button>
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">logIn</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">you don't have an account? <router-link to="/">Register here</router-link>.</p>
@@ -42,7 +41,29 @@
 <script>
 import axios from 'axios'
 
+export default {
+  data() {
+    return {
+      data: {
+        email:'',
+        password:''
+    }
+    }
+  },
+  methods:{
+    login(){
+      axios.post('http://127.0.0.1:8000/api/login', this.data).then((response) => {
 
+        const token = response.data.token;
+        localStorage.setItem('token', token);
 
-
+        this.$router.push('/wallet');
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+    }
+  }
+}
 </script>
+
